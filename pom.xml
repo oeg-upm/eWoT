@@ -10,9 +10,9 @@
 	</parent>
 	<groupId>oeg.interoperability</groupId>
 	<artifactId>client</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.1.0</version>
 	<name>client</name>
-	<description>Demo project for Spring Boot</description>
+	<description>WoT Semantic Interoperability Client (W-SIC)</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -37,6 +37,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
 		<!-- Jena basic libraries (all in one): https://mvnrepository.com/artifact/org.apache.jena/apache-jena-libs -->
      	<dependency>
             <groupId>org.apache.jena</groupId>

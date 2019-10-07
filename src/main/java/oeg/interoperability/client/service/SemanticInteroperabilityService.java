@@ -13,7 +13,6 @@ import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.ResourceFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ch.qos.logback.core.net.SyslogOutputStream;
 import helio.components.engine.EngineImp;
 import helio.framework.mapping.Mapping;
 import helio.framework.objects.RDF;

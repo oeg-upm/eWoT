@@ -15,8 +15,6 @@ import org.springframework.stereotype.Service;
 
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
-
-import ch.qos.logback.core.net.SyslogOutputStream;
 import helio.framework.objects.RDF;
 import oeg.interoperability.client.ClientApplication;
 import oeg.interoperability.client.ClientQueries;
@@ -65,6 +63,7 @@ public class GraphDBService {
 			log.info("Things registered: "+thingsRegistered.size());
 		} catch (UnirestException e) {
 			log.severe(e.toString());
+			log.severe("No endpoint for the description repository was provided, or repository endpoint is down!");
 		}
 	}
 	
