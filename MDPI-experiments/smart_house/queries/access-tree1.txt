@@ -1,0 +1,26 @@
+# access-tree1 @split
+prefix wot: <http://iot.linkeddata.es/def/wot#>
+prefix core: <http://iot.linkeddata.es/def/core#>
+prefix foaf: <http://xmlns.com/foaf/0.1/>
+prefix sosa: <http://www.w3.org/ns/sosa/>
+prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+prefix ssn: <http://www.w3.org/ns/ssn/>
+prefix adp: <http://iot.linkeddata.es/def/adapters#> 
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+prefix map: <http://iot.linkeddata.es/def/wot-mappings#> 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+select distinct * where {
+       ?thing rdf:type wot:Thing .
+       ?thing wot:name ?thingName .
+
+	   ?thing wot:providesInteractionPattern ?pattern .
+
+	   ?pattern rdf:type wot:Property .
+	   ?pattern sosa:observes ?observedProperty .
+
+       ?pattern core:hasValue ?hasValue .
+       
+       ?hasValue core:literalValue ?literal .
+       ?hasValue core:timestamp ?timestamp .
+}
