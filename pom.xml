@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>oeg.interoperability</groupId>
-	<artifactId>client</artifactId>
+	<artifactId>wsic</artifactId>
 	<version>0.1.0</version>
 	<name>client</name>
 	<description>WoT Semantic Interoperability Client (W-SIC)</description>

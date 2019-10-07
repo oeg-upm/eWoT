@@ -24,6 +24,7 @@ public class GraphDBService {
 
 	private Logger log = Logger.getLogger(GraphDBService.class.getName());
     private static final String QUERY_HEAD = "?name=&infer=true&sameAs=true&query=";
+    private static final String QUERY_HEAD_INSERT = "/statements";
 	private static List<String> thingsRegistered;
 	static {
 		thingsRegistered = new CopyOnWriteArrayList<>();
@@ -45,6 +46,24 @@ public class GraphDBService {
 		return result;
 	}
 	
+	public String executeUpdateQueryRemotely(String query, String format) {
+		String result = "";
+		try {
+			Unirest.setTimeouts(0, 0);
+			
+			String queryRequest = ClientApplication.repositoryEndpoint+QUERY_HEAD_INSERT;
+			@SuppressWarnings("deprecation")
+			String body = "update="+URLEncoder.encode(query);
+			String queryAnswer = Unirest.post(queryRequest).header("Accept", "application/x-trig").header("Content-Type", "application/x-www-form-urlencoded").body(body).asString().getBody();
+			log.info("Query update answer: "+queryAnswer);
+			result = queryAnswer;
+			log.info("query correctly ansewered remotelly");
+		} catch (Exception e) {
+			log.severe(e.toString());
+		}
+		
+		return result;
+	}
 	
 	@Scheduled(fixedDelay = 60000)
 	public void updateThingsURLs() {

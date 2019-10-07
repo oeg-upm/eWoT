@@ -79,8 +79,8 @@ public class SparqlController {
 		}
 		long endTime = System.nanoTime();
 		long timeElapsed = (endTime - startTime) / 1000000;		
-		//log.info("Query answered in milliseconds : " + timeElapsed);
-		System.out.println("Mid-Result;"+queryName+";total(ms)="+timeElapsed);
+		log.info("Query answered in milliseconds : " + timeElapsed);
+		//System.out.println("Mid-Result;"+queryName+";total(ms)="+timeElapsed);
 		
 		return queryAnswer;
 	}
