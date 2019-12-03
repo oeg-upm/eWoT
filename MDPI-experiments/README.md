@@ -13,4 +13,3 @@ bash deploy.sh [number of IoT devices]
 This script will start a number of IoT devices as specified in the previous capture. In addition, the script will register automatically their Thing Descriptions into the triple store. 
 The script asummes that the triple store is a graphDB with a repository called discovery, which is under the address *http://localhost:7200/repositories/discovery/statements*. Nevertheless, if it would be required to change the address open the script and modify the first two lines that contain the address.
 The first IoT device deployed is in the address localhost:8080, and, the rest are deployed incrementally in the following ports, i.e., the second will be in localhost:8081, the third in localhost:8082, and so on.
-
