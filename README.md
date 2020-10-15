@@ -2,6 +2,8 @@
 
 eWoT is an implementation that enables semantic interoperability for an IoT ecosystem. It relies on Thing Descriptions (TD) to profile the different IoT devices, and WoT-Mappings to translate their heterogeneus data into a normalised RDF modelled with a specific ontology. The ontologies endow for this purpose are the [Thing Description](http://iot.linkeddata.es/def/wot/index-en.html) and the [WoT-Mapping](http://iot.linkeddata.es/def/wot-mappings/index-en.html); nevertheless they can be extended with any other to enhance contextual information of the IoT device.
 
+Related paper: https://www.mdpi.com/1424-8220/20/3/822
+
 ## Quickstart
 
 Run the client jar with the following command
